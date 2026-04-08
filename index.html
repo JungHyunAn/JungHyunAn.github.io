@@ -21,6 +21,10 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
@@ -33,12 +37,36 @@
 
     a {
       color: inherit;
+      text-decoration: none;
     }
 
     .page {
       max-width: 1080px;
       margin: 0 auto;
-      padding: 48px 24px 72px;
+      padding: 32px 24px 72px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 28px;
+      padding: 14px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .nav a:hover {
+      color: var(--accent);
     }
 
     .hero {
@@ -81,9 +109,31 @@
     .subtitle {
       margin: 16px 0 0;
       color: var(--muted);
-      font-size: 1.15rem;
-      line-height: 1.7;
-      max-width: 58ch;
+      font-size: 1.1rem;
+      line-height: 1.75;
+      max-width: 62ch;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .link-btn {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(140, 61, 31, 0.08);
+      border: 1px solid rgba(140, 61, 31, 0.14);
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: 0.2s ease;
+    }
+
+    .link-btn:hover {
+      background: rgba(140, 61, 31, 0.14);
+      transform: translateY(-1px);
     }
 
     .pill-row {
@@ -103,11 +153,16 @@
       font-size: 0.95rem;
     }
 
+    .section-title {
+      margin: 40px 0 16px;
+      font-size: 1.6rem;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 24px;
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
     .card {
@@ -116,6 +171,11 @@
       border-radius: 24px;
       padding: 26px;
       box-shadow: var(--shadow);
+      transition: 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
     }
 
     .card h2 {
@@ -123,11 +183,16 @@
       font-size: 1.35rem;
     }
 
+    .card h3 {
+      margin: 18px 0 8px;
+      font-size: 1.05rem;
+    }
+
     .card p,
     .card li {
       color: var(--muted);
       font-size: 1rem;
-      line-height: 1.7;
+      line-height: 1.72;
     }
 
     .list {
@@ -152,12 +217,36 @@
       font-size: 1rem;
     }
 
-    .empty {
-      margin: 0;
-      padding: 18px 20px;
-      border-radius: 18px;
-      background: rgba(140, 61, 31, 0.05);
-      border: 1px dashed rgba(140, 61, 31, 0.24);
+    .entry {
+      margin-bottom: 22px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .entry .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding: 20px 6px 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
     }
 
     @media (max-width: 860px) {
@@ -169,95 +258,281 @@
       .hero {
         padding: 20px;
       }
+
+      .page {
+        padding: 20px 16px 56px;
+      }
     }
   </style>
 </head>
 <body>
   <main class="page">
-    <section class="hero">
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#experience">Experience</a>
+      <a href="#awards">Awards</a>
+      <a href="#coursework">Coursework</a>
+      <a href="#misc">Miscellaneous</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero" id="about">
       <img class="portrait" src="main_image.jpg" alt="Portrait of JungHyun An">
       <div>
         <p class="eyebrow">Personal Homepage</p>
         <h1>JungHyun An</h1>
         <p class="subtitle">
-          Hello, I am engineer interested in intelligent robotic systems. Currently working on
-          generative modeling-based robot control and network systems to support them.
+          I am an undergraduate researcher at Seoul National University majoring in Mechanical
+          Engineering and Electrical &amp; Computer Engineering. My research interests lie in
+          intelligent robotic systems, particularly generative models for robot control,
+          dexterous manipulation, and communication-aware multi-robot systems.
         </p>
+
+        <div class="link-row">
+          <a class="link-btn" href="mailto:2021-10673@snu.ac.kr">Email</a>
+          <a class="link-btn" href="#">CV</a>
+          <a class="link-btn" href="#">Google Scholar</a>
+          <a class="link-btn" href="https://github.com/JungHyunAn">GitHub</a>
+          <a class="link-btn" href="https://www.linkedin.com/in/%EC%A0%95%ED%98%84-%EC%95%88-2858b4381/">LinkedIn</a>
+        </div>
+
         <ul class="pill-row">
           <li>Robotics</li>
-          <li>Generative Control Policies</li>
-          <li>Networked Control</li>
+          <li>Generative Robot Control</li>
+          <li>Dexterous Manipulation</li>
+          <li>Multi-Robot Systems</li>
+          <li>Wireless Robotic Networks</li>
         </ul>
       </div>
     </section>
 
+    <h2 class="section-title">Overview</h2>
     <section class="grid">
       <article class="card">
         <h2>Education</h2>
-        <ul class="list">
-          <li>Seoul National University, Mechanical Engineering &amp; ECE (Double Major), GPA: 4.06/4.3</li>
-          <li>Korea Science Academy of KAIST</li>
-        </ul>
+
+        <div class="entry">
+          <strong>Seoul National University</strong>
+          <div class="meta">2021 - 2027 (expected)</div>
+          <p>B.S. in Mechanical Engineering, Double Major in Electrical &amp; Computer Engineering<br>
+          GPA: 4.06 / 4.30</p>
+        </div>
+
+        <div class="entry">
+          <strong>Korea Science Academy of KAIST</strong>
+          <div class="meta">2018 - 2021</div>
+        </div>
       </article>
 
       <article class="card">
         <h2>Research Interests</h2>
         <p>
-          My interests center on robotics, generative control policies, and networked control,
-          with a focus on building intelligent robotic systems that can learn, coordinate, and
-          operate reliably in complex environments.
+          My work centers on robotic intelligence at the intersection of learning, control, and
+          communication. I am broadly interested in developing principled and efficient methods
+          that enable robots to generate structured behavior, adapt under constraints, and
+          coordinate reliably in complex environments.
+        </p>
+        <h3>Current directions</h3>
+        <ul class="list">
+          <li>Flow-matching and generative models for robot trajectory learning</li>
+          <li>Geometry-aware learning for constrained robotic data</li>
+          <li>Communication-aware control and coordination for multi-robot systems</li>
+          <li>Cloud, edge, and wireless support for embodied intelligence</li>
+        </ul>
+      </article>
+    </section>
+
+    <h2 class="section-title" id="research">Research</h2>
+    <section class="grid">
+      <article class="card">
+        <h2>Generative Models for Robot Control</h2>
+        <p>
+          I study generative approaches to robot control, with a recent focus on flow-matching-based
+          methods for structured and constrained robotic motion. My goal is to design learning
+          methods that better exploit the geometry of robotic data for efficient and reliable
+          trajectory generation.
         </p>
       </article>
 
       <article class="card">
-        <h2>Publications</h2>
-        <p class="empty">Publications will be added here soon.</p>
+        <h2>Dexterous and Structured Manipulation</h2>
+        <p>
+          I am interested in robot learning methods for dexterous manipulation and structured action
+          generation. In particular, I explore how task constraints and low-dimensional motion
+          structure can be incorporated into generative policy learning.
+        </p>
       </article>
 
       <article class="card">
-        <h2>Awards &amp; Achievements</h2>
+        <h2>Communication-Aware Multi-Robot Systems</h2>
+        <p>
+          I also work on communication-aware robotic systems, including wireless resource allocation,
+          digital-twin-assisted simulation, and control-aware coordination for multi-robot settings.
+          This research connects robotics with wireless communications and edge/cloud system design.
+        </p>
+      </article>
+
+      <article class="card">
+        <h2>Long-Term Vision</h2>
+        <p>
+          My long-term goal is to build intelligent robotic systems that integrate learning,
+          control, and communication in a unified way, enabling robots to act robustly both
+          individually and as part of distributed systems.
+        </p>
+      </article>
+    </section>
+
+    <h2 class="section-title">News</h2>
+    <section class="grid">
+      <article class="card full">
         <div class="timeline">
           <div class="timeline-item">
-            <strong>2023.09 - 3rd Place, 2023 Cryptanalysis Contest</strong>
-            <p>
-              Funded by the Defense Security Agency (777 Command, ROK). Competed in a team of
-              three and contributed by designing an algorithm to break elliptic curve cryptography.
-            </p>
+            <strong>Jan 2026 - Present</strong>
+            <p>Joined the SNU Advanced Intelligent Systems Lab (ECE) and began research on communication-aware multi-robot control and image processing for warehouse robotics.</p>
           </div>
           <div class="timeline-item">
-            <strong>2025.12 - 1st Place, 2025 Fall Digital System Design Final Project</strong>
+            <strong>Mar 2025 - Jan 2026</strong>
+            <p>Conducted research at the SNU Robotics Laboratory (ME) on simulation data generation and geometry-aware generative modeling for robotic motion.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>Sep 2023</strong>
+            <p>Received 3rd Place in the 2023 Cryptanalysis Contest as part of a three-person team.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <h2 class="section-title" id="publications">Publications</h2>
+    <section class="grid">
+      <article class="card full">
+        <div class="entry">
+          <strong>Dimension-Guided Flow Matching for Degenerate Distributions</strong>
+          <div class="meta">Under review</div>
+          <p>
+            A study of geometry-aware flow matching for structured low-dimensional target
+            distributions, with applications to robotic trajectory generation.
+          </p>
+        </div>
+
+        <div class="entry">
+          <strong>Communication-Aware Multi-Robot Control in Wireless Robotic Systems</strong>
+          <div class="meta">Manuscript in preparation</div>
+          <p>
+            Research on communication-aware planning, pilot assignment, and control for multi-robot
+            systems in simulated wireless environments.
+          </p>
+        </div>
+
+        <p>
+          A complete list of publications and preprints will be updated here as papers become publicly available.
+        </p>
+      </article>
+    </section>
+
+    <h2 class="section-title" id="experience">Experience</h2>
+    <section class="grid">
+      <article class="card full">
+        <h2>Research Experience</h2>
+
+        <div class="entry">
+          <strong>Undergraduate Researcher, SNU Advanced Intelligent Systems Lab (ECE)</strong>
+          <div class="meta">Jan 2026 - Present | Advisor: Prof. Hyun Jong Yang</div>
+          <ul class="list">
+            <li>Conducting independent research on communication-aware multi-robot control in Sionna-based simulation environments.</li>
+            <li>Contributing to image processing for warehouse robots using segmentation in simulated scenes.</li>
+            <li>Working on problems at the intersection of robotic systems, wireless communication, and intelligent control.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <strong>Undergraduate Researcher, SNU Robotics Laboratory (ME)</strong>
+          <div class="meta">Mar 2025 - Jan 2026 | Advisor: Prof. Frank C. Park</div>
+          <ul class="list">
+            <li>Created simulation datasets for generative motion policies using MuJoCo.</li>
+            <li>Conducted independent research on geometry-aware flow matching for constrained robotic data.</li>
+            <li>Worked on generative modeling approaches for robot trajectory learning and control.</li>
+          </ul>
+        </div>
+
+        <h2>Miscellaneous</h2>
+
+        <div class="entry">
+          <strong>Mandatory Military Service, Republic of Korea Army</strong>
+          <div class="meta">Jul 2022 - Jan 2024 | KATUSA Sergeant (Ret.), Protocol, 2ID / RUCD</div>
+          <p>
+            Completed mandatory military service in the Republic of Korea Army as a KATUSA Sergeant (Ret.),
+            serving in Protocol at the 2nd Infantry Division / ROK-US Combined Division.
+          </p>
+        </div>
+      </article>
+    </section>
+
+    <h2 class="section-title" id="awards">Awards &amp; Achievements</h2>
+    <section class="grid">
+      <article class="card full">
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>3rd Place, 2023 Cryptanalysis Contest</strong>
             <p>
-              Achieved the fastest CNN accelerator design on FPGA among 32 teams.
+              Funded by the Defense Security Agency (777 Command, Republic of Korea). Contributed to
+              a three-person team by developing an algorithmic approach for elliptic curve cryptography analysis.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <strong>1st Place, Digital System Design Final Project, Seoul National University (Fall 2025)</strong>
+            <p>
+              Built the fastest CNN accelerator design on FPGA among 32 project teams.
             </p>
           </div>
         </div>
       </article>
     </section>
 
+    <h2 class="section-title" id="coursework">Relevant Coursework</h2>
     <section class="grid">
       <article class="card">
-        <h2>Relevant Coursework</h2>
-        <p><strong>Control &amp; Robotics</strong></p>
+        <h2>Control &amp; Robotics</h2>
         <ul class="list">
-          <li>Mechanical System Modeling and Control (SNU ME)</li>
-          <li>Control Systems 1 (SNU ME graduate)</li>
-          <li>Introduction to Robotics (SNU ME)</li>
-          <li>Robot Vision (SNU ME)</li>
-        </ul>
-        <p><strong>Digital Systems</strong></p>
-        <ul class="list">
-          <li>Digital Logic Design and Lab. (SNU ECE)</li>
-          <li>Computer Organization (SNU ECE)</li>
-          <li>Introduction to Data Communication Networks (SNU ECE)</li>
-          <li>Digital Systems Design and Lab. (SNU ECE)</li>
+          <li>Mechanical System Modeling and Control</li>
+          <li>Control Systems I (Graduate)</li>
+          <li>Introduction to Robotics</li>
+          <li>Robot Vision</li>
         </ul>
       </article>
 
       <article class="card">
-        <h2>Experiences</h2>
-        <p class="empty">Experience entries will be added here soon.</p>
+        <h2>Computation &amp; Systems</h2>
+        <ul class="list">
+          <li>Digital Logic Design and Laboratory</li>
+          <li>Computer Organization</li>
+          <li>Introduction to Data Communication Networks</li>
+          <li>Digital Systems Design and Laboratory</li>
+        </ul>
       </article>
     </section>
+
+    <h2 class="section-title" id="contact">Contact</h2>
+    <section class="grid">
+      <article class="card full">
+        <p>
+          I am always happy to connect about robotics, robot learning, generative modeling,
+          and communication-aware intelligent systems.
+        </p>
+        <p>
+          Email: <a href="mailto:2021-10673@snu.ac.kr">2021-10673@snu.ac.kr</a><br>
+          GitHub: <a href="https://github.com/JungHyunAn">JungHyunAn</a><br>
+          <!-- Google Scholar: <a href="https://scholar.google.com/">N/A</a><br> -->
+          CV: <a href="#">Download CV</a>
+        </p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      Last updated: April 2026
+    </footer>
   </main>
 </body>
 </html>
