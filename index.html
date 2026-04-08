@@ -2,23 +2,237 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JungHyun, An</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JungHyun An</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --surface: rgba(255, 252, 246, 0.88);
+      --surface-strong: #fffdf9;
+      --text: #1f1d1a;
+      --muted: #5f584d;
+      --accent: #8c3d1f;
+      --accent-soft: #d9b9a6;
+      --border: rgba(31, 29, 26, 0.08);
+      --shadow: 0 18px 48px rgba(65, 43, 28, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(140, 61, 31, 0.16), transparent 32%),
+        radial-gradient(circle at bottom right, rgba(87, 115, 91, 0.16), transparent 24%),
+        linear-gradient(180deg, #f7f3eb 0%, #f0eadf 100%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 24px 72px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 36px;
+      align-items: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .portrait {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 22px;
+      display: block;
+      box-shadow: 0 14px 40px rgba(40, 28, 20, 0.18);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 58ch;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pill-row li {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(140, 61, 31, 0.08);
+      border: 1px solid rgba(140, 61, 31, 0.14);
+      font-size: 0.95rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--surface-strong);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin: 0 0 18px;
+      font-size: 1.35rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      padding-left: 18px;
+      border-left: 3px solid var(--accent-soft);
+    }
+
+    .timeline-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .empty {
+      margin: 0;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(140, 61, 31, 0.05);
+      border: 1px dashed rgba(140, 61, 31, 0.24);
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>JungHyun, An</h1>
+  <main class="page">
+    <section class="hero">
+      <img class="portrait" src="main_image.jpg" alt="Portrait of JungHyun An">
+      <div>
+        <p class="eyebrow">Personal Homepage</p>
+        <h1>JungHyun An</h1>
+        <p class="subtitle">
+          Hello, I am engineer interested in intelligent robotic systems. Currently working on
+          generative modeling-based robot control and network systems to support them.
+        </p>
+        <ul class="pill-row">
+          <li>Robotics</li>
+          <li>Generative Control Policies</li>
+          <li>Networked Control</li>
+        </ul>
+      </div>
+    </section>
 
-  <p>
-    Undergraduate Researcher<br>
-    Mechanical Engineering & ECE (Double Major)<br>
-    Seoul National University
-  </p>
+    <section class="grid">
+      <article class="card">
+        <h2>Education</h2>
+        <ul class="list">
+          <li>Seoul National University, Mechanical Engineering &amp; ECE (Double Major), GPA: 4.06/4.3</li>
+          <li>Korea Science Academy of KAIST</li>
+        </ul>
+      </article>
 
-  <p>
-    Research Interests: Robotics, Networked Control, AI
-  </p>
+      <article class="card">
+        <h2>Research Interests</h2>
+        <p>
+          My interests center on robotics, generative control policies, and networked control,
+          with a focus on building intelligent robotic systems that can learn, coordinate, and
+          operate reliably in complex environments.
+        </p>
+      </article>
 
-  <p>
-    Email: 2021-10673@snu.ac.kr
-  </p>
+      <article class="card">
+        <h2>Publications</h2>
+        <p class="empty">Publications will be added here soon.</p>
+      </article>
+
+      <article class="card">
+        <h2>Awards &amp; Achievements</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>2023.09 - 3rd Place, 2023 Cryptanalysis Contest</strong>
+            <p>
+              Funded by the Defense Security Agency (777 Command, ROK). Competed in a team of
+              three and contributed by designing an algorithm to break elliptic curve cryptography.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <strong>2025.12 - 1st Place, 2025 Fall Digital System Design Final Project</strong>
+            <p>
+              Achieved the fastest CNN accelerator design on FPGA among 32 teams.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
 </body>
 </html>
