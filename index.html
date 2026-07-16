@@ -43,7 +43,7 @@
     .project-meta { margin:0 0 14px; color:var(--muted); font-size:.91rem; }
     .project p { margin:0 0 20px; }
     .project > p:not(.project-meta):not(.caption) { text-align:justify; }
-    .demo { display:block; width:100%; max-width:300px; margin:22px auto 0; background:var(--soft); border:1px solid var(--line); }
+    .demo { display:block; width:100%; max-width:500px; margin:22px auto 0; background:var(--soft); border:1px solid var(--line); }
     video.demo { aspect-ratio:4/3; }
     .caption { max-width:500px; margin:8px auto 0 !important; color:var(--muted); font-size:.86rem; line-height:1.5; text-align:center !important; }
     .publication { padding-left:18px; border-left:2px solid var(--line); }
@@ -83,14 +83,14 @@
     <nav class="nav" aria-label="Primary navigation">
       <a class="nav-name" href="#top">JungHyun An</a>
       <div class="nav-links">
-        <a href="#education">Education</a><a href="#coursework">Coursework</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#honors">Honors</a>
+        <a href="#education">Education</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#honors">Honors</a><a href="#coursework">Coursework</a>
       </div>
     </nav>
   </header>
 
   <main id="top">
     <section class="intro" aria-labelledby="page-title">
-      <img class="portrait" src="main_image.jpg" alt="JungHyun An">
+      <img class="portrait" src="main_image.png" alt="JungHyun An">
       <div>
         <h1 id="page-title">JungHyun An</h1>
         <p class="role">Undergraduate Researcher · Seoul National University</p>
@@ -110,33 +110,15 @@
           <p class="entry-place">B.S. Mechanical Engineering · Double Major, Electrical &amp; Computer Engineering</p><p class="entry-description">GPA: 4.06 / 4.30</p>
         </article>
         <article class="entry">
+          <p class="entry-title">University of California San Diego</p><time class="entry-date">Sep. 2026–Jan. 2027</time>
+          <p class="entry-place">Exchange Student</p>
+        </article>
+        <article class="entry">
           <p class="entry-title">Korea Science Academy of KAIST</p><time class="entry-date">2018–2021</time><p class="entry-place">High School Diploma</p>
         </article>
       </div>
     </section>
-    <section class="content-section" id="coursework">
-      <h2 class="section-heading">Selected Coursework</h2>
-      <div class="section-body entries">
-        <article class="entry">
-          <p class="entry-title">Control and Robotics</p>
-          <ul class="course-list">
-            <li>Mechanical System Modeling and Control</li>
-            <li>Control System I (Graduate)</li>
-            <li>Introduction to Robotics</li>
-            <li>Robot Vision</li>
-          </ul>
-        </article>
-        <article class="entry">
-          <p class="entry-title">Computation and Systems</p>
-          <ul class="course-list">
-            <li>Digital Logic Design and Laboratory</li>
-            <li>Computer Organization</li>
-            <li>Introduction to Data Communication Networks</li>
-            <li>Digital Systems Design and Laboratory</li>
-          </ul>
-        </article>
-      </div>
-    </section>
+
 
     <section class="content-section" id="research">
       <h2 class="section-heading">Research</h2>
@@ -145,7 +127,7 @@
         <article class="project">
           <h3>Neighborhood-Guided Flow Matching</h3>
           <p class="project-meta">Generative robot policies · Geometry-aware learning</p>
-          <p>Standard flow-matching policies generate trajectories in the full action space even when feasible robot motion lies near a lower-dimensional structure. Neighborhood-Guided Flow Matching (NGFM) uses local neighborhoods of the given demo to estimate coordinate charts and guide probability paths, introducing a geometric bias without requiring an explicit global manifold model. I am investigating whether this structure improves data efficiency and precision in constrained manipulation tasks.</p>
+          <p>Standard flow-matching policies generate trajectories in the full action space even when feasible robot motion lies near a lower-dimensional structure. Neighborhood-Guided Flow Matching (NGFM) uses local neighborhoods of the given demo to estimate coordinate charts and guide probability paths, introducing a geometric bias without requiring an explicit global manifold model. I am currently evaluating it across simulated and real-robot settings.</p>
           <video class="demo" controls muted playsinline preload="metadata"><source src="demos/NGFM_demo.mp4" type="video/mp4">Your browser does not support embedded video.</video>
           <p class="caption">NGFM trajectory generation in a simulated manipulation environment.</p>
         </article>
@@ -195,6 +177,30 @@
           <li><span><strong>1st Place</strong>, Digital System Design Final Project, Seoul National University<br>Fastest FPGA-based CNN accelerator among 32 project teams.</span><time>2025</time></li>
           <li><span><strong>3rd Place</strong>, Cryptanalysis Contest<br>Algorithmic analysis of elliptic curve cryptography in a three-person team. The contest was funded by the Defense Security Agency, Republic of Korea.</span><time>2023</time></li>
         </ul>
+      </div>
+    </section>
+
+    <section class="content-section" id="coursework">
+      <h2 class="section-heading">Selected Coursework</h2>
+      <div class="section-body entries">
+        <article class="entry">
+          <p class="entry-title">Control and Robotics</p>
+          <ul class="course-list">
+            <li>Mechanical System Modeling and Control</li>
+            <li>Control System I (Graduate)</li>
+            <li>Introduction to Robotics</li>
+            <li>Robot Vision</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <p class="entry-title">Computation and Systems</p>
+          <ul class="course-list">
+            <li>Digital Logic Design and Laboratory</li>
+            <li>Computer Organization</li>
+            <li>Introduction to Data Communication Networks</li>
+            <li>Digital Systems Design and Laboratory</li>
+          </ul>
+        </article>
       </div>
     </section>
   </main>
