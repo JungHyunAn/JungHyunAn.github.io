@@ -44,7 +44,8 @@
     .project p:last-child { margin-bottom:0; }
     .project .project-meta { margin:0 0 10px; color:var(--muted); font-size:.875rem; }
     .project-media { margin:0; min-width:0; }
-    .demo { width:100%; aspect-ratio:4/3; object-fit:contain; background:var(--soft); border:1px solid var(--line); }
+    .demo { width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; background:var(--soft); border:1px solid var(--line); }
+    .demo--ucsd { object-fit:cover; object-position:center bottom; }
     .project-media a { display:block; }
     .caption { margin:7px 0 0; color:var(--muted); font-size:.875rem; line-height:1.45; }
     .finding { padding:10px 14px; border-left:3px solid var(--link); background:var(--soft); font-size:.95rem; }
@@ -155,7 +156,7 @@
       <div class="section-body">
         <article class="project">
           <figure class="project-media">
-            <img class="demo" src="demos/UCSD_coordination.png" alt="Two robot arms facing a cabinet and sorting trays in a simulated manipulation workspace" width="525" height="457" loading="lazy">
+            <img class="demo demo--ucsd" src="demos/UCSD_coordination.png" alt="Two robot arms facing a cabinet and sorting trays in a simulated manipulation workspace" width="525" height="457" loading="lazy">
             <figcaption class="caption">Multi-robot manipulation simulation at UC San Diego.</figcaption>
           </figure>
           <div class="project-copy">
