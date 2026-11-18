@@ -109,7 +109,7 @@
         <h1 id="page-title">Junghyun An</h1>
         <p class="role">SNU Undergraduate · UC San Diego Research Intern</p>
         <p class="intro-copy">I am an SNU undergraduate in Mechanical Engineering and Electrical &amp; Computer Engineering, currently at UC San Diego as an exchange student and research intern with Prof. Nikolay Atanasov.</p>
-        <p class="intro-copy">I study <strong>robot learning and multi-robot coordination</strong> for industrial automation: how robots can use shared environmental knowledge to select specialized skills, work in parallel, and cooperate on joint tasks.</p>
+        <p class="intro-copy">I study <strong>robot learning and multi-robot coordination</strong> to enable long-horizon, large-scale autonomy. I am interested in how shared spatial representations can support decentralized task planning and coordinated manipulation, allowing robots to work independently while collaborating when necessary.</p>
         <div class="profile-links" aria-label="Profile links">
           <a href="mailto:2021-10673@snu.ac.kr">Email</a><a href="assets/JungHyun_An_CV.pdf">CV</a><a href="https://github.com/JungHyunAn">GitHub</a><a href="https://www.linkedin.com/in/%EC%A0%95%ED%98%84-%EC%95%88-2858b4381/">LinkedIn</a>
         </div>
@@ -162,8 +162,10 @@
           <div class="project-copy">
             <p class="project-meta">UC San Diego · Ongoing</p>
             <h3>Shared 3D Semantic Memory for Multi-Robot Coordination</h3>
-            <p>Developing a macro-action policy that uses shared 3D semantic memory and robot information to select each robot’s next specialized skill or a wait action.</p>
-            <p class="finding"><strong>Research question</strong><br>Can one shared memory support both parallel task execution and cooperative bimanual manipulation?</p>
+            <p>Developing demonstration-based action refinement for SmolVLA using local, low-dimensional structure in robot state–action trajectories to improve long-horizon manipulation. Future work will integrate refined policies with shared spatial memory for decentralized multi-robot coordination.</p>
+            <p class="finding"><strong>38 of 60 planned tasks completed</strong><br>Compared with 22 of 60 for singleton retrieval.
+              <small>Preliminary simulation results across ten six-task histories, using privileged state information and the same prologue in both conditions.</small>
+            </p>
           </div>
         </article>
         <article class="project">
@@ -175,8 +177,8 @@
             <p class="project-meta">SNU · Cloud robotics and wireless systems</p>
             <h3>Communication-Aware Task Allocation for Robot Fleets</h3>
             <p>Devised CATA, developed much of its mathematical formulation, and implemented simulations in NVIDIA Sionna. The method scores task assignments using motion cost and predicted pilot contamination to account for how robot motion affects wireless communication.</p>
-            <p class="finding"><strong>Higher throughput, shorter missions</strong><br>4.815 → 4.941 Mbps uplink · 550.4 → 541.0 s completion time
-              <small>Simulation means over 10 seeds, compared with closest-start allocation.</small>
+            <p class="finding"><strong>19.6% less communication waiting</strong><br>5.24% shorter mission completion time
+              <small>Relative to closest-start allocation across 40 matched simulation scenarios with 40 robots, 320 tasks, and five pilots.</small>
             </p>
           </div>
         </article>
@@ -190,7 +192,7 @@
             <h3>Neighborhood-Guided Flow Matching</h3>
             <p>Formulated NGFM and implemented robosuite experiments, using local probabilistic PCA models of demonstrations to guide generative probability paths.</p>
             <p class="finding"><strong>72.1% success with 80 demonstrations</strong><br>Vanilla flow matching: 60.3% · Diffusion Policy: 56.9%
-              <small>Simulated door opening, mean across 3 seeds. Gains of 11.9 and 15.2 percentage points, respectively.</small>
+              <small>Simulated door opening, mean across 3 seeds. Gains of 11.8 and 15.2 percentage points, respectively.</small>
             </p>
             <p>Improvements varied across demonstration budgets; the broader hypothesis of a consistent advantage with scarce data was not supported.</p>
             <p><a href="https://github.com/JungHyunAn/DGFM">GitHub repository</a></p>
@@ -278,6 +280,6 @@
     </section>
   </main>
 
-  <footer><div class="footer-inner"><span>Junghyun An · San Diego, California</span><span>Last updated September 2026</span></div></footer>
+  <footer><div class="footer-inner"><span>Junghyun An · San Diego, California</span><span>Last updated November 2026</span></div></footer>
 </body>
 </html>
